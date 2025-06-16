@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,20 +27,37 @@ namespace UnderstandingLINQ
                          && car.Year == 2023
                          select car;
 
-            foreach(var car in hondas)
-            {
-                Console.WriteLine("{0} {1}", car.Model, car.VIN);
-            }
+            var orderedCars = from car in cars
+                              orderby car.Year descending
+                              select car;
+
             */
 
+            var newCars = from car in cars
+                          where car.Make == "Honda"
+                          && car.Year == 2023
+                          select new { car.Make, car.Model };
+            Console.WriteLine(newCars.GetType());
 
             // LINQ method
-            var hondas = cars.Where(p => p.Make == "Honda" && p.Year == 2023);
 
-            foreach (var car in hondas)
-            {
-                Console.WriteLine("{0} {1}", car.Model, car.VIN);
-            }
+            // var hondas = cars.Where(p => p.Make == "Honda" && p.Year == 2023);
+            // var orderedCars = cars.OrderByDescending(p => p.Year);
+            // var firstHonda = cars.First(p => p.Make == "Honda");
+            // Console.WriteLine(cars.TrueForAll(p => p.Year > 2020));
+
+            // cars.ForEach(p => p.StickerPrice -= 3000);
+            // cars.ForEach(c => Console.WriteLine("{0} {1:C}", c.VIN, c.StickerPrice));
+
+            // Console.WriteLine(cars.Exists(p => p.Model == "BMW"));
+            // Console.WriteLine(cars.Sum(p => p.StickerPrice));
+
+            //Console.WriteLine(cars.GetType());
+
+            // foreach (var car in orderedCars)
+            // {
+            //    Console.WriteLine("{0} {1}", car.Model, car.Year);
+            // }
         }
     }
 
