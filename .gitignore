@@ -1,0 +1,56 @@
+# Build results
+**/bin/
+**/obj/
+
+# User-specific files
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# Visual Studio Code settings
+.vscode/
+
+# Rider settings
+.idea/
+
+# NuGet packages (optional – if using `packages` folder instead of global)
+**/packages/
+# Uncomment if you use NuGet and want to ignore the global packages folder
+# ~/.nuget/
+
+# Auto-generated files
+**/*.generated.cs
+
+# Logs
+**/*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Dotnet-specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Test results
+TestResults/
+**/TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Global config folder
+.vs/
